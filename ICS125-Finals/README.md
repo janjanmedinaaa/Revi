@@ -86,12 +86,10 @@ office outsourcing, which includes customer-related services such as contact cen
 
 ### Global Service Provider
 - Connects firms to different outsourcing businesses in an international level
-
-#### Offshore
-- outsourcing around the world.Usually Westerners do this because of cheaper labor and better skills from Asia. Problem could be time difference.
-
-#### Nearshore
--  outsourcing near the country. Problem could be different cultures.
+- **Offshore**
+    - outsourcing around the world.Usually Westerners do this because of cheaper labor and better skills from Asia. Problem could be time difference.
+- **Nearshore**
+    -  outsourcing near the country. Problem could be different cultures.
 
 ### Outsourced Services
 - **Techonology Services**
@@ -199,29 +197,22 @@ Practice of using a network of remote servers hosted on the Internet to store, m
     - collection of servers where application is placed and accessed via internet.
 
 ### Deployment Models
-
-#### Community Cloud
-- allows systems and services to be accessible by group of organizations or companies. 
-
-#### Public Cloud
-- allows systems and services to be easily accessible to the general or public.
-
-#### Private Cloud
-- allows systems and services to be accessible within an organization.
-
-#### Hybrid Cloud
-- service providers can utilize 3rd party Cloud Providers in a full or partial manner thus increasing the flexibility of computing.
+- Community Cloud
+    - allows systems and services to be accessible by group of organizations or companies. 
+- Public Cloud
+    - allows systems and services to be easily accessible to the general or public.
+- Private Cloud
+    - allows systems and services to be accessible within an organization.
+- Hybrid Cloud
+    - service providers can utilize 3rd party Cloud Providers in a full or partial manner thus increasing the flexibility of computing.
 
 ### Service Models
-
-#### Infrastructure as a Service (IaaS)
-- basic and lowest level is infrastructure-as-a-service level of service.
-
-#### Platform as a Service (PaaS)
-- Includes the operating environment included the operating system and application services.
-
-#### Software as a Service (SaaS)
-- Required software, Operating System and Network is provided.
+- Infrastructure as a Service (IaaS)
+    - basic and lowest level is infrastructure-as-a-service level of service.
+- Platform as a Service (PaaS)
+    - Includes the operating environment included the operating system and application services.
+- Software as a Service (SaaS)
+    - Required software, Operating System and Network is provided.
 
 ### Advantages of Cloud Computing
 1. Reduced Cost
