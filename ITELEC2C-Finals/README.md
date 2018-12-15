@@ -156,3 +156,22 @@ Patterns that deal with encapsulating behavior with objects, assigning responsib
         - **Implements** an Accept operation that **takes a visitor as an argument**.
     - **ObjectStructure**
         - **Provide a high-level interface** to allow the visitor to visit its elements
+
+### Mediator Design Pattern
+- Defines an object that **encapsulates how a set of objects interact**.
+- **Promotes loose coupling** by keeping objects from referring to each other explicitly, and it lets you vary their interaction independently.
+- **Parts**
+    - **Mediator**
+        - **Interface for communicating** with Colleague objects.
+    - **ConcreteMediator**
+        - **Implements cooperative behavior** by coordinating Colleague objects.
+    - **Colleague Classes**
+        - Each colleague **communicates with its mediator** whenever it would have otherwise communicated with another colleague.
+
+### Template Design Pattern
+- Defines the **skeleton of an algorithm** in an operation, deferring some steps to subclasses.
+- **Parts**
+    - **Abstract Class**
+        - **Defines abstract primitive operations** that concrete subclasses define to implement steps of an algorithm.
+    - **ConcreteClass**
+        - **Implements the primitive operations**S to carry.
