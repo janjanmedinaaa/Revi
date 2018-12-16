@@ -293,6 +293,71 @@
     - can be swiped off before the time limit
     - `Snackbar.make(coordinatorLayout, 'Message', Snackbar.LENGTH_LONG).show()`
 
+## Explicit and Implicit Intent
+
+### R Class
+- generated when the Android Application is compiled
+- contains resource IDs for all the resources available in your res/ directory
+
+### Android App Components
+- **Activities**
+    - Represents a **Single Screen**
+    - Extends `Activity` Base Class
+- **Services**
+    - **Runs in Background**
+    - Extends `Service` Base Class
+- **Intent/Broadcast Receiver**
+    - **Receives and Reacts to Broadcast Intents**
+    - No UI but **can start an Activity**
+    - Extends `BroadcastReceiver` Base Class
+- **Content Provider**
+    - **Makes application data available to other apps**
+    - Extends `ContentProvider` Base Class
+
+### Services
+- **runs in the background** to perform long-running operations **without needing to interact with the user**
+- it works even if application is destroyed
+- **States**
+    - Started
+        - when an application component, such as an activity, starts it by calling `startService()`
+    - Bound
+        - when an application component binds to it by calling `bindService()`
+
+### IntentService
+- can be used in long tasks usually with **no communication to main thread**
+- triggered using an **Intent**
+- it spawns a **separate worker thread** and the method `onHandleIntent()` is called on this thread
+
+### Intent
+- **message that is passed between components** such as Activities, Content Providers, Broadcast Receivers, Services, etc.
+
+### Explicit vs. Implicit Intents
+- **Explicit**
+    - **specifies** the component
+    - Starts Broadcast Receivers, Activities, Background Services
+    - `Intent i = new Intent(Intent.ACTION_VIEW);`
+- **Implicit**
+    - **doesn't specify** the component
+    - Starts Map Geolocation, Website in Webview, Dialer
+    - `Intent i = new Intent(getApplicationContext(), ActivityTwo.class);`
+
+### Pieces of Intent
+- **Action** - defines what you want to do
+- **Data** - what type of data do you want to work with
+- **Extras** - what additional information you need to provide
+- **Categories** - create groups of components to handle the intent
+
+### Intent Filter
+- Defined mostly in your manifest but may also be dynamically registered in code.
+- Describe what **ACTION**, **DATA**, or **CATEGORIES** that a component can handle.
+- Children of `<intent-filter>`
+    - `<action>`
+        - actions can be handled by your component
+    - `<category>`
+        - grouping does your component support
+    - `<data>`
+        - what data can be handled by your component
+
 ## Persistent Storage in Android Application
 
 ### Methods of Saving Data
