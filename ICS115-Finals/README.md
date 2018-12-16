@@ -72,7 +72,7 @@
 
 ### Android View
 - `manifests` folder
-    - Contains the **AndroidManifest.xml** file
+    - Contains the `AndroidManifest.xml` file
 - `java` folder
     - Contains the **Java source code** files
     - including **JUnit test** code.
@@ -237,6 +237,61 @@
 ### Material Design
 - comprehensive guide for visual, motion, and interaction design across platforms and devices
 - Main purpose is creation of new visual language that combines principles of good design with technical and scientific innovation
+
+## Android Lifecycle
+
+### Activity 
+- represents a single screen
+- must be declared in your `AndroidManifest.xml` file
+- main activity must be declared in the manifest with an `<intent-filter>` that includes the **MAIN** action and **LAUNCHER** category
+
+### Android Callback Methods
+- `onCreate()`
+    - first callback and called when the activity is first created
+- `onStart()`
+    - activity becomes visible to the user
+- `onResume()`
+    - user starts interacting with the application
+- `onPause()`
+    - current activity is being paused and the previous activity is being resumed
+    - does not receive user input and cannot execute any code
+- `onStop()`
+    - activity is no longer visible
+- `onDestroy()`
+    - activity is destroyed by the system
+- `onRestart()`
+    - activity restarts after stopping it
+
+### Advantages of Good Callback Implementations
+- avoid **crashing** if the user receives a phone call or switches to another app while using your app
+- avoid **consuming valuable system resources** when the user is not actively using it
+- avoid **losing the user’s progress if they leave your app** and return to it at a later time
+- avoid **crashing or losing the user’s progress when the screen rotates**
+
+### Application
+- every app has 1 main activity and other activities
+- when a new activity starts, the previous activity is stopped and added to a stack known as *backstack*
+
+### Logcat
+- for debugging purposes
+- **Methods**
+    - `Log.i(String tag, String message)` - Information 
+    - `Log.e(String tag, String message)` - Error 
+    - `Log.w(String tag, String message)` - Warning 
+    - `Log.v(String tag, String message)` - Verbose
+    - `Log.d(String tag, String message)` - Debug
+
+### Toast vs. Snackbar
+- Toast
+    - customised and printed anywhere on the screen
+    - don’t have action button
+    - cannot be off until the time limit finish
+    - `Toast.makeText(getApplicationContext(), 'Message', Toast.LENGTH_SHORT).show()`
+- Snackbar
+    - only showed in the bottom of the screen
+    - may have a maximum of 1 action button optionally
+    - can be swiped off before the time limit
+    - `Snackbar.make(coordinatorLayout, 'Message', Snackbar.LENGTH_LONG).show()`
 
 ## Persistent Storage in Android Application
 
