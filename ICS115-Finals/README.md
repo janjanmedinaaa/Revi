@@ -104,6 +104,122 @@
 - **Content Providers**
     - **manages a shared set of app data** that you can store in the file system
 
+## Android User Interface
+
+### Wireframes
+- structural blueprints of sorts for the content you are planning to present via your app
+
+### UI Controls
+- **TextView** - Display text
+- **EditText** - Input text
+- **AutoCompleteTextView** - shows a list of completion suggestions automatically
+- **Button** - pressed or clicked to perform actions
+- **ImageButton** - shows and Image as a button
+- **Checkbox** - on/off switch
+- **ToggleButton** - on/off button with a light indicator
+- **RadioButton** - either checked or unchecked
+
+### UI Layouts
+- **LinearLayout** - aligns all children in a single direction, **vertically or horizontally**
+- **RelativeLayout** - displays child views in **relative positions**
+- **ConstraintLayout** - layout child views using *constraints*
+- **TableLayout** - groups views into **rows and columns**
+- **FrameLayout** - **placeholder on screen** that you can use to display a single view
+- **ListView** - displays a list of **scrollable items**
+- **GridView** - displays items in a two-dimensional or a **scrollable grid**
+
+### Extensible Markup Language (XML)
+- tagging language **much like HTML** used to describe data
+- **used in Android development** for different purposes, including defining the screen layout
+- **readable** by both human and machine
+- **scalable and simple** to develop
+
+### Some Android Project Files
+
+#### AndroidManifest.xml
+- define all the components of our application
+
+```
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.medina.falcutila.farey">
+
+    /* App User Permissions */
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-feature android:name="android.hardware.location.gps" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name=".MapsActivity"
+            android:label="@string/title_activity_maps">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".PricesActivity"></activity> // How other Screens are added
+    </application>
+
+</manifest>
+```
+
+#### strings.xml
+- define all the strings in this XML file and then access them in our app
+```
+<resources>
+    <string name="app_name">Farey</string>
+    <string name="title_activity_maps">Farey</string>
+    <string name="display_title">COMMON TAXI FARE</string>
+    <string name="main_taxi_cab">Taxi Cab</string>
+    <string name="book_now">BOOK NOW</string>
+</resources>
+```
+
+#### styles.xml
+- define different styles and looks for the UI
+```
+<resources>
+    <!– Base application theme.  –>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!– Customize your theme here.  –>
+    </style>
+</resources>
+```
+
+#### colors.xml
+- define the color codes that we used in our app
+```
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!– define your colors Here –>
+    <color name="greenColor">#0f0</color>
+    <color name="white">#fff</color>
+</resources>
+```
+
+#### dimens.xml
+- define the dimensions of the Views
+```
+<resources>
+    <!– Default screen margins, per the Android Design guidelines.–>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="btnheight">50dp</dimen>
+</resources>
+```
+
 ## Persistent Storage in Android Application
 
 ### Methods of Saving Data
