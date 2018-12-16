@@ -439,7 +439,6 @@
 - Files stored in the files folder are persistent and remain until they are deleted
 - Files can be stored temporarily(caching)
 
-
 ## SQLite Database
 
 ### SQLite
@@ -449,7 +448,6 @@
 
 ### SQLiteOpenHelper
 - Used to manipulate the SQLite Database
-
 
 ## Firebase Database
 
@@ -472,3 +470,25 @@
 
 ### Firebase
 - Fully managed platform for building **IOS, Android, and Web Apps** that provides automatic **data synchronization, authentication, messaging, file storage, analytics, and more**.
+
+### Sample Firebase Code
+```
+/* Create Firebase Instance and Database References */
+FirebaseDatabase db = FirebaseDatabase.getInstance();
+DatabaseReference reference = db.getReference("RideShare");
+
+/* To listen for Firebase Database Changes */
+reference.addValueEventListener(new ValueEventListener() {
+    @Override
+    public void onDataChange(DataSnapshot dataSnapshot) {
+        for(DataSnapshot ds : dataSnapshot.getChildren()) {
+            
+        }
+    }
+
+    @Override
+    public void onCancelled(DatabaseError databaseError) {
+        System.out.println("The read failed: " + databaseError.getCode());
+    }
+});
+```
