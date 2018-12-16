@@ -52,7 +52,7 @@
     - **Needs a browser** to run
     - Web apps are **less interactive and intuitive** than native apps
 
-## Android Architecture
+### Android Architecture
 - **Linux Kernel**
     - **foundation** of the Android Platform
     - where the **Android Runtime relies**
@@ -67,6 +67,42 @@
 - **Java API Framework**
     - entire feature-set of the Android OS is available to you through APIs written in Java
 - **System Apps**
+
+## Android Projects and API
+
+### Android View
+- `manifests` folder
+    - Contains the **AndroidManifest.xml** file
+- `java` folder
+    - Contains the **Java source code** files
+    - including **JUnit test** code.
+- `res` folder
+    - Contains all non-code resources, such as **XML layouts**, UI **strings**, and bitmap **images**
+
+### Project View
+- `build` folder
+    - Contains **build outputs**
+- `libs` folder
+    - Contains **private libraries**
+- `src` folder
+    - Contains all **code and resource** files
+    - `androidTest` folder
+        - Contains code for **instrumentation tests** that run on an Android device
+    - `main` folder
+        - Contains the *main* source set files
+- `build.gradle`
+    - defines the **module-specific build configurations**
+
+### Android App Components
+- **Activities**
+    - **entry point** for interacting with the user
+    - represents a **single screen**
+- **Services**
+    - **runs in the background** to perform long-running operations or to perform work for remote processes
+- **Broadcast Receivers**
+    - enables the system to deliver events to the app outside of a regular user flow, allowing the app to **respond to system-wide broadcast announcements**
+- **Content Providers**
+    - **manages a shared set of app data** that you can store in the file system
 
 ## Persistent Storage in Android Application
 
