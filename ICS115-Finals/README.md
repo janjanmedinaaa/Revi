@@ -220,6 +220,24 @@
 </resources>
 ```
 
+## Styles, Themes, and Material Design
+
+### Styles
+- defines the format and look for a UI
+- can be applied to an individual View or entire Activity or application
+- defined in an **XML**
+
+### Themes
+- Android style applied to an entire Activity or application
+- To set a theme for all activities:
+    - edit `<application android:theme=@style/CustomStyle />`
+- To set a theme for one activity:
+    - edit `<activity android:theme=@style/CustomStyle />`
+
+### Material Design
+- comprehensive guide for visual, motion, and interaction design across platforms and devices
+- Main purpose is creation of new visual language that combines principles of good design with technical and scientific innovation
+
 ## Persistent Storage in Android Application
 
 ### Methods of Saving Data
