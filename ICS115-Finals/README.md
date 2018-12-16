@@ -1,4 +1,72 @@
-# ICS 115 Finals
+# ICS 115 Finals (Cover to Cover)
+
+## Basic Concepts and Tools
+
+### Ways in Creating Mobile Applications
+- **WebViews**
+    - Used by **First cross-platform** frameworks
+    - PhoneGap, Apache Cordova, Ionic
+- **Reactive Views**
+    - **Simplify the creation of WebViews** through the use of programming patterns borrowed from Reactive Programming.
+    - React Native 
+- **Flutter**
+    - Takes a different approach to avoiding performance problems caused by the need for a JavaScript bridge by using Dart.
+- **Native Applications**
+    - Developed to be used on a **particular platform** or operating system
+    - Built using the specific IDE for the given Operating Systems
+    - Android, IOS
+
+### Native Application - PROS AND CONS
+- **PROS**
+    - Fast and Responsive
+    - Best Performance
+    - **More Interactive**, Intuitive and run much smoother in terms of user Input and Output.
+- **CONS**
+    - **More expensive** to develop
+    - **Require more time** to develop
+    - **Higher cost** of maintenance
+
+### Hybrid Applications
+- Applications developed to be used across multiple platforms
+- **Targets a WebView** hosted inside a native container.
+
+### Hybrid Application - PROS AND CONS
+- **PROS**
+    - **Adaptable** to multiple platforms
+    - Unified and **less expensive** development
+    - **Faster development** time
+- **CONS**
+    - **Slower** app performance
+    - Apps with heavy animations and sound effects aren’t as seamless as their native counterparts.
+
+### Progressive Web Apps
+- Web app that uses modern web capabilities to deliver an app-like experience to users
+- Can always be **pinned or saved** on your phone’s home screen.
+
+### Progressive Web Apps - PROS AND CONS
+- **PROS**
+    - **Easy** to build
+    - Works **offline** and performs well on low-quality networks
+    - One app for all platforms
+- **CONS**
+    - **Needs a browser** to run
+    - Web apps are **less interactive and intuitive** than native apps
+
+## Android Architecture
+- **Linux Kernel**
+    - **foundation** of the Android Platform
+    - where the **Android Runtime relies**
+- **Hardware Abstraction Layer (HAL)**
+    - provides standard interfaces that expose device hardware capabilities to the higher-level Java API framework
+- **Android Runtime (ART)**
+    - written to run multiple virtual machines on low-memory devices by executing DEX files
+    - **DEX Files**
+        - bytecode format designed specially for Android that’s optimized for minimal memory footprint
+- **Native C/C++ Libraries**
+    - Many core Android system components and services, such as ART and HAL, are built from native code that require native libraries written in C and C++.
+- **Java API Framework**
+    - entire feature-set of the Android OS is available to you through APIs written in Java
+- **System Apps**
 
 ## Persistent Storage in Android Application
 
