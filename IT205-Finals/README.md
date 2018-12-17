@@ -1,6 +1,6 @@
 # IT205 Finals
 
-## Managing User Desktops with Group Policy
+<!-- ## Managing User Desktops with Group Policy
 
 ### Administrative Templates
 - Provide you with the ability to **control both the environment of the operating system and user experience**
@@ -143,4 +143,41 @@
 
 ### Name Resolution Policy Table
 - table that defines DNS servers for different namespaces and corresponding security settings
-- used before the adapter’s DNS settings
+- used before the adapter’s DNS settings -->
+
+## Installing, Configuring, and Troubleshooting the Network Policy Server Role
+
+### Network Policy Server
+- RADIUS server
+    - performs centralized connection authentication, authorization, and accounting for wireless, authenticating switch, and dial-up and VPN connections
+- RADIUS proxy
+    - configure connection request policies that indicate which connection requests that the NPS server will forward to other RADIUS servers and to which RADIUS servers you want to forward connection requests
+- NAP policy server
+    - evaluates statements of health (SoHs) sent by NAP-capable client computers that attempt to connect to the network
+
+### RADIUS Server
+- Remote Authentication Dial-In User Service
+- client/server protocol and software that enables remote access servers to communicate with a central server to authenticate dial-in users and authorize their access to the requested system or service
+
+### RADIUS Client
+- send connection requests and accounting messages to RADIUS servers for authentication, authorization, and accounting
+
+### RADIUS Proxy
+- receives connection attempts from RADIUS clients, and then forwards them to the appropriate RADIUS server or another RADIUS proxy for further routing
+- Required for:
+    - Offering outsourced dial-up, VPN, or wireless network-access services by service providers 
+    - Providing authentication and authorization for user accounts that are not Active Directory members
+    - Performing authentication and authorization by using a database that is not a Windows account database 
+    - Load-balancing connection requests among multiple RADIUS servers 
+    - Providing RADIUS for outsourced service providers and limiting traffic types through the firewall 
+
+### Connection Request Policy
+- sets of conditions and settings that designate which RADIUS servers perform the authentication and authorization of connection requests that NPS receives from RADIUS clients
+
+### NPS monitoring methods
+- Event logging 
+    - process of logging NPS events in the System Event log
+    - useful for auditing and troubleshooting connection attempts
+- Logging user authentication and accounting requests 
+    - useful for connection analysis and billing purposes
+
