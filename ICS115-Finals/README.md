@@ -375,13 +375,15 @@
 ### Private Files
 - Files that rightfully belong to your app and should be deleted when the user uninstalls your app
 - Doesn’t provide value to the user outside your app
-`getExternalFilesDir()`
+- `getExternalFilesDir()`
+    - store **private** files on external storage
 - Method to store private files on external storage
 
 ### Public Files
 - Files that should be freely available to other apps and to the end user
 - Not deleted when the user uninstalls the app
-`getExternalStoragePublicDirectory()`
+- `getExternalStoragePublicDirectory()`
+    - store **public** files on external storage
 - Method to store public files on the external storage
 
 ### Shared Preferences 
@@ -395,8 +397,11 @@
     - string
 - **Editor Class Methods**: 
     - `apply()`
+        - commit your changes back from editor to the sharedPreference object you are calling
     - `clear()`
+        - remove all values from the editor
     - `remove(String key)`
+        - remove the value by key
     - `putLong(String key, long value)`
     - `putInt(String key, int value)`
     - `putFloat(String key, float value)`
