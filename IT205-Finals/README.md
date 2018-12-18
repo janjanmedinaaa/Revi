@@ -148,23 +148,23 @@
 ## Installing, Configuring, and Troubleshooting the Network Policy Server Role
 
 ### Network Policy Server
-- RADIUS server
-    - performs centralized connection authentication, authorization, and accounting for wireless, authenticating switch, and dial-up and VPN connections
-- RADIUS proxy
+- **RADIUS server**
+    - performs centralized connection **authentication**, **authorization**, and **accounting for wireless**, **authenticating switch**, and **dial-up** and **VPN connections**
+- **RADIUS proxy**
     - configure connection request policies that indicate which connection requests that the NPS server will forward to other RADIUS servers and to which RADIUS servers you want to forward connection requests
-- NAP policy server
+- **NAP policy server**
     - evaluates statements of health (SoHs) sent by NAP-capable client computers that attempt to connect to the network
 
 ### RADIUS Server
-- Remote Authentication Dial-In User Service
-- client/server protocol and software that enables remote access servers to communicate with a central server to authenticate dial-in users and authorize their access to the requested system or service
+- **Remote Authentication Dial-In User Service**
+- **client/server protocol and software that enables remote access servers** to communicate with a central server to authenticate dial-in users and authorize their access to the requested system or service
 
 ### RADIUS Client
-- send connection requests and accounting messages to RADIUS servers for authentication, authorization, and accounting
+- **send connection requests and accounting messages to RADIUS servers** for authentication, authorization, and accounting
 
 ### RADIUS Proxy
 - receives connection attempts from RADIUS clients, and then forwards them to the appropriate RADIUS server or another RADIUS proxy for further routing
-- Required for:
+- **Required for:**
     - Offering outsourced dial-up, VPN, or wireless network-access services by service providers 
     - Providing authentication and authorization for user accounts that are not Active Directory members
     - Performing authentication and authorization by using a database that is not a Windows account database 
@@ -175,9 +175,60 @@
 - sets of conditions and settings that designate which RADIUS servers perform the authentication and authorization of connection requests that NPS receives from RADIUS clients
 
 ### NPS monitoring methods
-- Event logging 
+- **sEvent logging**
     - process of logging NPS events in the System Event log
     - useful for auditing and troubleshooting connection attempts
-- Logging user authentication and accounting requests 
+- **Logging user authentication and accounting requests** 
     - useful for connection analysis and billing purposes
 
+## Implementing Network Access Protection
+
+### Network Access Protection
+- **Enforce health-requirement policies** on client computers
+- **Ensure client computers** are compliant with policies
+- Offer remediation support for computers that do not meet health requirements
+- **NAP cannot:**
+    - **Prevent authorized users with compliant computers from performing malicious activity on the network**
+    - **Restrict network access for computers** that are running Windows versions previous to Windows XP SP2, when exception rules are configured for those computers
+
+### IPsec Enforcement
+- comprises a health certificate server and an IPsec NAP EC
+- IPsec enforcement confines the communication on a network to those nodes that are considered compliant 
+- You can define requirements for secure communications with compliant clients on a per-IP address or a per-TCP/UDP port-number basis
+
+### VPN Enforcement
+- Computer must be compliant to obtain **unlimited network access through a remote access VPN connection** 
+- Noncompliant computers have **network access limited through a set of IP packet filters** that the VPN server applies to the VPN connection
+- actively monitors the health status of the NAP client and then **applies the IP packet filters for the restricted network to the VPN connection** if the client becomes noncompliant 
+
+### DHCP Enforcement
+- Computers must be compliant to obtain an **unlimited access IPv4 address configuration from a DHCP server**
+- Noncompliant computers have IPv4 address configuration, **allowing access to restricted network only**
+- actively monitors the health status of the NAP client, **renewing the IPv4 address configuration for access only to the restricted network** if the client becomes noncompliant
+
+### System Health Validators
+- server software counterparts to system health agents
+
+### Health Policy
+- consist of one or more SHVs and other settings, which you can **use to define configuration requirements for NAP-capable computers** that attempt to connect to your network
+
+### Remediation Server Groups
+- list of servers on the restricted network that noncompliant NAP clients can access for software updates 
+- **Remediation Server** 
+    - hosts the updates that the NAP agent can use to bring noncompliant client computers into compliance with the health policy that NPS defines 
+
+### NAP Tracing
+- identifies NAP events and records them to a log file
+- disabled by default, no NAP Events are recorded
+- **Tracing Levels**
+    - Basic
+    - Advanced
+    - Debug
+- **Usage**
+    - Evaluate the health and security of your network
+    - For troubleshooting and maintenance
+
+### Troubleshooting NAP
+- `netsh NAP client show state`
+- `netsh NAP client show config`
+- `netsh NAP client show group`
