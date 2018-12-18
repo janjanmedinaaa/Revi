@@ -405,3 +405,38 @@
 - Can be approved automatically but not recommended
 - Updates should be tested first
 - can be declined and removed
+
+## Monitoring Windows Server 2012
+
+### Task Manager
+- helps you to identify and resolve performance-related issues
+
+### Performance Monitor
+- enables you to view current performance statistics, or to view historical gathered through the use of data collector sets
+
+### Resource Monitor
+- provides an in-depth look at the real-time performance of your server
+
+### Event Viewer
+- provides categorized lists of essential Windows log events, and log groupings for individual installed applications and specific Windows component categories
+
+### Baseline, Trends, and Capacity Planning 
+- you can more accurately interpret real-time monitoring information
+
+### Establishing a Baseling
+- Interpret Performance trends
+- Perform capacity planning
+- Identify bottlenecks
+
+### Data Collector Sets
+- enables you to gather performance-related and other system statistics for analysis
+- Contains:
+    - Performance Counters
+    - Event Trace data
+    - System configuration information
+
+### Custom View
+- allow you to query and sort just the events that you want to analyze
+
+### Event Subscriptions
+- allow you to collect event logs from multiple servers, and store them locally
