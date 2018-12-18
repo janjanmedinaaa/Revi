@@ -385,3 +385,23 @@
 ### Enabling Audit Policy
 - **Enable the appropriate settings** in the GPO
 - **Apply the GPO to the AD DS** location where your servers are located
+
+## Implementing Update Management
+
+### Windows Server Update Service (WSUS)
+- Software Update Services
+- program developed by Microsoft that enables administrators to manage the distribution of updates and hotfixes released for Microsoft Products to computers in a corporate environment
+- Phases
+    - Assess
+    - Identify
+    - Evaluate and Plan
+    - Deploy
+
+### Computer Groups
+- used to control how updates are applied
+- used to organize WSUS clients
+
+### Approving Updates
+- Can be approved automatically but not recommended
+- Updates should be tested first
+- can be declined and removed
