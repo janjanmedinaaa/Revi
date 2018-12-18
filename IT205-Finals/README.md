@@ -359,3 +359,29 @@
     - Report on the current status of the members of the topology
 - **Dfsrdiag.exe**
     - Monitor replication state of the DFS replication service
+
+## Configuring Encryption and Advanced Auditing
+
+### Encrypting File System (EFS)
+- feature that can **encrypt files** that are stored on an **NTFS–formatted partition**
+- acts as an *additional* layer of security
+- can be used with **no pre-configuration**
+
+### EFS Mechanics
+- **Symmetric encryption** is used to protect the data
+- **Public key encryption** is used to protect the symmetric key
+
+### Recovering EFS–Encrypted Files
+- Back up user certificates
+- Configure a recovery agent
+
+### Audit Policies
+- By default, domain controllers audit success events for most categories
+- **Over-auditing**
+    - Logs are too big to find important events
+- **Under-auditing**
+    - Important events are not logged
+
+### Enabling Audit Policy
+- **Enable the appropriate settings** in the GPO
+- **Apply the GPO to the AD DS** location where your servers are located
