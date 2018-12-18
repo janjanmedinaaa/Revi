@@ -232,3 +232,130 @@
 - `netsh NAP client show state`
 - `netsh NAP client show config`
 - `netsh NAP client show group`
+
+## Optimizing File Services
+
+### Capacity management challenges
+- Determining **existing storage use**
+- **Establishing and enforcing storage use with policies**
+- Anticipating future requirements
+
+### Addressing CMCs
+- Analyzing **how storage is used**
+- Defining storage resource management policies
+- **Implementing policies** to manage storage growth
+- **Implementing a system** for reporting and monitoring
+
+### File Server Resource Manager (FSRM)
+- role service in Windows Server that enables to managed and classified data stored on file server
+- **Functionalities (SFSFC)**
+    - Storage quota management
+    - File screening management
+    - Storage reports management
+    - File management tasks
+    - Classification management
+
+### Quota Management
+- limit disk space usage and provides notifications when thresholds are reached
+- Quota Notifications
+    - Send **email** notifications
+    - **Log an event** in Event Viewer
+    - **Run a command** or script
+    - Generate storage **reports**
+
+### Quota Templates
+- **Defines:**
+    - A space limit
+    - The type of quota (hard or soft)
+    - A set of notifications to be generated when the quota limit is approached
+
+### Monitoring Quota Usage
+- Viewing quota information in the **FSRM console**
+- Generating a **quota usage report**
+- **Creating soft quotas**
+- Using the `Get-FSRMQuota` Windows PowerShell cmdlet
+
+### File Screening Management
+- provides a method for controlling the types of files that can be saved on file servers
+
+### File Groups
+- used to define a namespace for a file screen, file screen exception, or storage report
+- **Pattern Groups**
+    - Files to include
+    - Files to exclude
+
+### File screen templates
+- Provide a definition for newly created file screens
+- Enable control over file screens created from templates
+
+### File screen exceptions
+- Enable you to override file screens for a specific location or file group
+
+### Storage Reports
+- provide information about file usage on a file server
+
+### Report Task Specifications
+- The volumes and folders to report on
+- Which reports to generate
+- Which parameters to use
+- How often to generate the reports
+- Which file formats to save the reports in
+
+### Classification Management
+- enables you to **create and assign classification properties to files** using an automated mechanism
+
+### Classification Properties
+- **configurable value** that can be assigned to a file
+
+### Classification Rule
+- **applies Classification Properties** to file based on information about the file
+
+### File Management Tasks
+- enable administrators to perform operations on files based on assigned Classification Properties
+- **Functionalities**
+    - Move files to other locations
+    - Archive expired files
+    - Delete unwanted files
+    - Rename files
+
+### Distributed File System
+- incorporates technologies that provide fault-tolerant access to geographically dispersed files
+- **DFS Technologies**
+    - DFS-N (*Namespace*)
+    - DFS-R (*Replication*)
+
+### DFS Namespace
+- **Domain-based namespace**
+    - Namespace is stored in AD DS
+    - Increased redundancy for namespace hosting 
+- **Standalone namespace**
+    - Namespace is stored on the local server
+    - Only redundant of stored on a failover cluster
+
+### DFS Replication
+- Uses Remote Differential Compression (RDC)
+- Uses a staging folder to stage a file before sending or receiving it
+- Detects changes on the volume by monitoring the USN journal
+- Uses a vector version exchange protocol
+- Recovers from failure 
+
+### Data Deduplication
+- optimizes volume storage by redirecting redundant data to single storage point
+
+### Replication Group
+- A set of servers that participate in replicating one or more replicated folders
+
+### Replicated Folder
+- A folder that is kept replicated on each server
+
+### Troubleshooting DFS
+- **Health Report**
+    - Report replication statistics and general health of the topology
+- **Propagation Test**
+    - Generate a test file to verify replication
+- **Propagation Report**
+    - Report on the propagation test and provide replication statistics
+- **Verify Topology**
+    - Report on the current status of the members of the topology
+- **Dfsrdiag.exe**
+    - Monitor replication state of the DFS replication service
